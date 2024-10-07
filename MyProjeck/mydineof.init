@@ -1,0 +1,32 @@
+! mydineof.init
+! 文件中的具体参数的值和 dineof 程序的填充方式有关，需要的话咨询 GPT 。
+
+! INPUT File for DINEOF 3.0
+! Lines starting with a ! or # are comments
+
+! data、time 填写待处理的 NetCDF 文件，及对应变量名；mask 填写我们自己创建的 mask 文件和 mask 变量。
+data = ['input.nc#chlor_a']
+mask = ['mask_for_input.nc#mask']
+time = 'input.nc#time'
+
+alpha = 0.01
+numit = 3
+nev = 5
+neini = 1
+ncv = 10
+tol = 1.0e-8
+nitemax = 300
+toliter = 1.0e-3
+rec = 1
+eof = 1
+norm = 0
+seed = 243435
+
+! 这里是输出文件夹、输出文件路径及变量等
+Output = 'Output/'
+results = ['Output/filled.nc#chlor_a']
+
+EOF.U = ['Output/eof.nc#U']
+EOF.V = 'Output/eof.nc#V'
+EOF.Sigma = 'Output/eof.nc#Sigma'
+
